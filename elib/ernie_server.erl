@@ -144,7 +144,7 @@ try_listen(Port, Times) ->
   Res = gen_tcp:listen(Port, [binary, {packet, 4}, {ip, {127,0,0,1}}, {active, false}, {reuseaddr, true}, {backlog, 128}]),
   case Res of
     {ok, LSock} ->
-      error_logger:info_msg("Listening on port ~p~n on 127.0.0.1", [Port]),
+      error_logger:info_msg("Listening on port ~p on 127.0.0.1~n", [Port]),
       % gen_tcp:controlling_process(LSock, ernie_server),
       {ok, LSock};
     {error, Reason} ->
